@@ -1,0 +1,104 @@
+
+numero = int(input("Digite um número inteiro: "))
+
+if numero % 2 == 0:
+    print("PAR")
+else:
+    print("IMPAR")
+
+
+
+    *//negativo
+
+numero = int(input("Digite um número inteiro: "))
+
+
+if numero < 0:
+    print("NEGATIVO")
+else:
+    print("NAO NEGATIVO")
+
+
+
+    *//Valor do usuario
+
+valor = float(input("Digite um valor: "))
+
+if 0 <= valor <= 25:
+    print("Intervalo [0,25]")
+elif 25 < valor <= 50:
+    print("Intervalo (25,50]")
+elif 50 < valor <= 75:
+    print("Intervalo (50,75]")
+elif 75 < valor <= 100:
+    print("Intervalo (75,100]")
+else:
+    print("Fora de intervalo")
+
+
+
+    *//item de quantidade
+
+codigo = int(input("Digite o código do item: "))
+quantidade = int(input("Digite a quantidade: "))
+
+if codigo == 1:
+    preco = 4.00
+elif codigo == 2:
+    preco = 4.50
+elif codigo == 3:
+    preco = 5.00
+elif codigo == 4:
+    preco = 2.00
+elif codigo == 5:
+    preco = 1.50
+else:
+    preco = 0.0  # Caso de código inválido (opcional)
+
+total = preco * quantidade
+
+print(f"Total: R$ {total:.2f}")
+
+
+
+*//imposto renda
+
+def calcular_imposto(salario):
+    if salario <= 2000.00:
+        return "Isento"
+    elif salario <= 3000.00:
+        imposto = (salario - 2000.00) * 0.08
+    elif salario <= 4500.00:
+        imposto = (1000.00 * 0.08) + (salario - 3000.00) * 0.18
+    else:
+        imposto = (1000.00 * 0.08) + (1500.00 * 0.18) + (salario - 4500.00) * 0.28
+    
+    return f"R$ {imposto:.2f}"
+
+print(calcular_imposto(3002.00))  # Saída: R$ 80.36
+print(calcular_imposto(1701.12))  # Saída: Isento
+print(calcular_imposto(4520.00))  # Saída: R$ 355.60
+
+
+
+*//guadrante
+
+def identificar_quadrante(x, y):
+    if x == 0 and y == 0:
+        return "Origem"
+    elif x == 0:
+        return "Eixo Y"
+    elif y == 0:
+        return "Eixo X"
+    elif x > 0 and y > 0:
+        return "Q1"
+    elif x < 0 and y > 0:
+        return "Q2"
+    elif x < 0 and y < 0:
+        return "Q3"
+    elif x > 0 and y < 0:
+        return "Q4"
+
+print(identificar_quadrante(4.5, -2.2))  # Saída: Q4
+print(identificar_quadrante(0.1, 0.1))   # Saída: Q1
+print(identificar_quadrante(0.0, 0.0))   # Saída: Origem
